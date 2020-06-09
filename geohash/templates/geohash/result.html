@@ -1,0 +1,41 @@
+
+
+{% if name and country %}
+<h3 style="margin-left:100px">Top Twitter HashTags Trending Now -- {{ name }}, {{ country }}</h3>
+{% elif name and not country %}
+<h3 style="margin-left:100px">Top Twitter HashTags Trending Now -- {{ name }}</h3>
+{% elif country and not name %}
+<h3 style="margin-left:100px">Top Twitter HashTags Trending Now -- {{ country }}</h3>
+{% endif %}
+
+{% if form %}
+<form style="margin-left:100px" action="{% url 'geohash:ByMetro' %}" method="get">
+  {{ form }}
+  <input type="submit" value="Submit">
+</form>
+{% endif %}
+
+<a style="margin-left:100px" href="{% url 'geohash:index' %}">Return to Homepage</a>
+
+<body>
+{% if d %}
+<table style="background-color:#c7e1f0; width:350px; margin-top:35px; margin-left:100px" border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: center;">
+      <th>Rank</th>
+      <th>HashTag</th>
+      <th>TweetVol</th>
+    </tr>
+  </thead>
+  <tbody>
+  {% for k, v in d.items %}
+  <tr>
+    <td>{{ k }}</td>
+    <td>{{ v.HashTag }}</td>
+    <td style="text-align:right">{{ v.TweetVol }}</td>
+  </tr>
+  {% endfor %}
+  </tbody>
+</table>
+{% endif %}
+</body>
