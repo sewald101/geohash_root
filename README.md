@@ -18,4 +18,4 @@
 6) `CNTL-C` to shut down local geohash django server.
 7) `$ docker stop <ID noted above in Step 3>`
 8) To re-run app, repeat Step 4 above.
-9) To delete geohash Docker container: `docker rm <ID noted above in Step 3>
+9) To delete geohash Docker container: `docker rm <ID noted above in Step 3>`
