@@ -1,4 +1,4 @@
-## Geohash, a Django web app, runs locally in a web browser and returns top-trending hashtags and tweet volumes by geographical area at select worldwide (default), country, and metro grains.
+## Geohash, a Django web app, runs locally in a web browser and returns top-trending hashtags and tweet volumes by geographical area at selected worldwide (default), country, and metro grains.
 
 ### Prerequisites to run geohash locally:
 
@@ -8,11 +8,11 @@
 
 ### To run geohash locally in a web browser:
 1) Edit geohash_root/Dockerfile and enter AWS Key and AWS Secret Key where shown.
-## SECURITY ALERT: DO NOT COMMIT THIS EDITED DOCKERFILE TO REMOTE VERSION CONTROL, WHICH COULD EXPOSE YOUR AWS CREDENTIALS!!!
+## <span style="color:red">SECURITY ALERT:</span> DO NOT COMMIT THE DOCKERFILE EDITED IN STEP 1 TO REMOTE VERSION CONTROL, WHICH COULD EXPOSE YOUR AWS CREDENTIALS!!!
 2) `$ docker build -t geohash -f Dockerfile .` (Don't forget the dot at the end!)
 3) `$ docker ps -a` Note multi-character ID of geohash container and save for clean up.
-4) `$ docker run -it -p 80:8888 geohash`
-5) In a web browser, visit: localhost/geohash/
+4) `$ docker run -it -p 8888:8888 geohash`
+5) In a web browser, visit: localhost:8888/geohash/
 
 ### To quit and clean up:
 6) `CNTL-C` to shut down local geohash django server.
