@@ -4,12 +4,13 @@
 
 * Docker installed on the local machine
 * An AWS account with Access Key and Secret Access Key
-    NOTE: Either name the Secret `prod/twit_api` within us-west-2 or edit lines 14-15 to match your Secret name and AWS region in geohash_root/geohash/twitter_auth.py
+
+   **NOTE:** Either name the Secret `prod/twit_api` within us-west-2 or edit lines 14-15 to match your Secret name and AWS region in geohash_root/geohash/twitter_auth.py
 * Twitter API credentials stored in an AWS Secret
 
 ### To run geohash locally in a web browser:
 1) Edit geohash_root/Dockerfile and enter AWS Key and AWS Secret Key where shown.
-## <span style="color:red">SECURITY ALERT:</span> DO NOT COMMIT THE DOCKERFILE EDITED IN STEP 1 TO REMOTE VERSION CONTROL, WHICH COULD EXPOSE YOUR AWS CREDENTIALS!!!
+### **SECURITY ALERT:** DO NOT COMMIT THE DOCKERFILE EDITED IN STEP 1 TO REMOTE VERSION CONTROL, WHICH COULD EXPOSE YOUR AWS CREDENTIALS!!!
 2) `$ docker build -t geohash -f Dockerfile .` (Don't forget the dot at the end!)
 3) `$ docker ps -a` Note multi-character ID of geohash container and save for clean up.
 4) `$ docker run -it -p 8888:8888 geohash`
