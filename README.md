@@ -6,7 +6,7 @@
 * An AWS account with Access Key and Secret Access Key
 * Twitter API credentials stored in an AWS Secret
 
-    **NOTE:** Either name the AWS Secret `prod/twit_api` within region `us-west-2` or edit lines 14-15 to match your AWS Secret name and AWS region in geohash_root/geohash/twitter_auth.py
+    **NOTE:** Either name the AWS Secret `prod/twit_api` within region `us-west-2` or edit lines 14-15 in geohash_root/geohash/twitter_auth.py to match your AWS Secret name and AWS region. 
 
 ### To run geohash locally in a web browser:
 1) Edit geohash_root/Dockerfile and enter AWS Key and AWS Secret Key where shown.
